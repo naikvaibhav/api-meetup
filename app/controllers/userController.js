@@ -84,7 +84,7 @@ let signUpFunction = (req, res) => {
               countryCode: req.body.countryCode,
               countryName: req.body.countryName,
               internationalCode: req.body.internationalCode,
-              avatar: req.body.avatar,
+              avatar: req.body.avatar?req.body.avatar:'',
               createdOn: time.now()
             });
             newUser.save((err, newUser) => {

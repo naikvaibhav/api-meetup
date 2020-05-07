@@ -69,7 +69,7 @@ let userSchema = new Schema({
   },
   avatar: {
     type: String,
-    default:'https://project-images-upload.s3.amazonaws.com/default-avatar.jpg'
+    "default": "https://project-images-upload.s3.amazonaws.com/default-avatar.jpg"
   }
 });
 
