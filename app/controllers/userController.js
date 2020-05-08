@@ -72,6 +72,9 @@ let signUpFunction = (req, res) => {
             reject(apiResponse);
           } else if (check.isEmpty(retrievedUserDetails)) {
             console.log(req.body);
+            if(req.body.avatar == 'undefined'){
+              req.body.avatar = "https://project-images-upload.s3.amazonaws.com/default-avatar.jpg"
+            }
             let newUser = new UserModel({
               userId: shortid.generate(),
               firstName: req.body.firstName,
@@ -84,7 +87,7 @@ let signUpFunction = (req, res) => {
               countryCode: req.body.countryCode,
               countryName: req.body.countryName,
               internationalCode: req.body.internationalCode,
-              avatar: req.body.avatar?req.body.avatar:'',
+              avatar: req.body.avatar,
               createdOn: time.now()
             });
             newUser.save((err, newUser) => {
