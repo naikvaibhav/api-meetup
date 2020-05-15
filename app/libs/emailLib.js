@@ -9,8 +9,8 @@ var transporter = nodemailer.createTransport({
   port: 465,
   secure: true, // true for 465, false for other ports
   auth: {
-    user: "naikvaibhav1994@gmail.com", // your domain email address
-    pass: "pLpwtrLZ9zc7", //  password for the application
+    user: process.env.email, // your domain email address
+    pass: process.env.password, //  password for the application
   },
 });
 
