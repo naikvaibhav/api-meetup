@@ -502,7 +502,7 @@ let forgotPassword = (req, res) => {
       secret = result.password + "-" + result.createdOn.getTime();
       console.log(secret);
       const token = jwt.sign(payload, secret, { expiresIn: "30m" });
-      let link = `http://meetup.angularweb.tech/resetPassword/${payload.userId}/${token}`;
+      let link = `https://meetup.naikvaibhav.online/resetPassword/${payload.userId}/${token}`;
 
       email.emailOnResetPassword(payload.email, link);
       let apiResponse = response.generate(

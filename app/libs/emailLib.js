@@ -61,7 +61,7 @@ let emailOnMeetingCreation = function (
     </body>`,
     },
     {
-      from: "naikvaibhav@angularweb.tech",
+      from: "meetup@naikvaibhav.online",
     }
   );
 
